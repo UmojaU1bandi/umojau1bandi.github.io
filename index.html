@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanzania Breadcrumbs — UMOJA-U1 BANDI COMPANY</title>
+<meta name="description" content="Tanzania Breadcrumbs (nyeupe na kahawia) na Jilambe Pilau Masala kutoka UMOJA-U1 BANDI COMPANY, Dar es Salaam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;900&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF3E1;
+    --wheat:#EFDDB2;
+    --brick:#7B2A16;
+    --brick-dark:#5E1F10;
+    --gold:#C98A3B;
+    --gold-light:#E4B15D;
+    --espresso:#2B1D12;
+    --espresso-soft:#4A3826;
+    --white:#FFFDF8;
+    --radius:4px;
+    --maxw:1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--espresso);
+    font-family:'Mulish',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.stamp{
+    font-family:'Bitter',serif;
+    color:var(--espresso);
+    margin:0 0 .4em 0;
+    line-height:1.15;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .lang-en{display:none;}
+  body.show-en .lang-sw{display:none;}
+  body.show-en .lang-en{display:inline;}
+  body.show-en .lang-en.block{display:block;}
+
+  /* perforation divider — packaging edge motif */
+  .perf{
+    height:14px;
+    background-image:radial-gradient(circle, var(--cream) 3px, transparent 3.5px);
+    background-size:20px 14px;
+    background-repeat:repeat-x;
+    background-position:center;
+  }
+  .perf.on-dark{background-image:radial-gradient(circle, var(--espresso) 3px, transparent 3.5px);}
+  .perf.on-wheat{background-image:radial-gradient(circle, var(--wheat) 3px, transparent 3.5px);}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:40;
+    background:var(--cream);
+    border-bottom:2px solid var(--espresso);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{
+    font-family:'Bitter',serif;font-weight:900;
+    font-size:1.25rem;letter-spacing:.02em;
+    display:flex;flex-direction:column;line-height:1.05;
+  }
+  .brand span.small{font-family:'Mulish',sans-serif;font-weight:700;font-size:.62rem;color:var(--brick);letter-spacing:.14em;}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .lang-btn{
+    background:var(--espresso);color:var(--cream);
+    border:none;border-radius:var(--radius);
+    padding:8px 14px;font-family:'Mulish';font-weight:700;font-size:.85rem;
+    cursor:pointer;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 20px;border-radius:var(--radius);
+    font-weight:700;font-size:.95rem;text-decoration:none;
+    border:2px solid transparent;cursor:pointer;
+  }
+  .btn-whatsapp{background:#2E9E4F;color:#fff;}
+  .btn-call{background:var(--brick);color:#fff;}
+  .btn-outline{background:transparent;color:var(--espresso);border-color:var(--espresso);}
+  .btn-sm{padding:9px 14px;font-size:.82rem;}
+
+  /* HERO */
+  .hero{
+    background:var(--espresso);
+    color:var(--cream);
+    padding:64px 0 48px;
+    position:relative;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;}
+  .hero .eyebrow{
+    color:var(--gold-light);font-weight:800;font-size:.8rem;
+    letter-spacing:.12em;margin-bottom:10px;
+  }
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(2.3rem,5vw,3.6rem);
+    font-weight:900;
+    letter-spacing:.01em;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--gold-light);
+  }
+  .hero p.lead{color:#EADFC7;font-size:1.08rem;max-width:46ch;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;}
+  .hero-photo{
+    background:var(--wheat);
+    border:6px solid var(--gold);
+    border-radius:var(--radius);
+    aspect-ratio:4/5;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    color:var(--espresso-soft);
+    font-size:.85rem;text-align:center;padding:16px;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* SECTION generic */
+  section{padding:56px 0;}
+  .section-wheat{background:var(--wheat);}
+  .section-tag{
+    color:var(--brick);font-weight:800;font-size:.78rem;
+    letter-spacing:.1em;margin-bottom:6px;
+  }
+  .section-head{max-width:60ch;margin-bottom:32px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .about-grid p{font-size:1.03rem;}
+
+  /* PRODUCTS */
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:1000px){ .products-grid{grid-template-columns:1fr 1fr;} }
+  .product-card{
+    background:var(--white);
+    border:2px solid var(--espresso);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .product-photo{
+    aspect-ratio:16/10;background:var(--wheat);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--espresso-soft);font-size:.8rem;text-align:center;padding:12px;
+    border-bottom:2px solid var(--espresso);
+    overflow:hidden;
+  }
+  .product-photo img{width:100%;height:100%;object-fit:cover;}
+  .product-body{padding:22px 22px 24px;}
+  .product-body h3{font-size:1.3rem;margin-bottom:6px;}
+  .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px;}
+  .tag{
+    background:var(--cream);border:1px solid var(--espresso);
+    padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:700;
+  }
+
+  /* SIZES / PRICE CARD strip */
+  .sizes-strip{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  }
+  .size-card{
+    background:var(--brick);color:var(--cream);
+    border-radius:var(--radius);
+    padding:22px 18px;text-align:center;
+  }
+  .size-card .num{font-family:'Bitter';font-weight:900;font-size:2rem;color:var(--gold-light);}
+  .size-card .lbl{font-weight:700;font-size:.9rem;margin-top:4px;}
+  .size-card .sub{font-size:.78rem;color:#E9CBB4;margin-top:6px;}
+
+  /* USES */
+  .uses-list{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;
+  }
+  .use-item{
+    background:var(--white);border:1.5px solid var(--espresso);
+    border-radius:var(--radius);padding:16px 14px;
+    font-weight:700;font-size:.92rem;
+    display:flex;align-items:center;gap:10px;
+  }
+  .use-item .dot{width:8px;height:8px;background:var(--brick);border-radius:50%;flex:none;}
+
+  /* GALLERY */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  }
+  .gallery-item{
+    aspect-ratio:1;background:var(--wheat);border:2px solid var(--espresso);
+    border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--espresso-soft);font-size:.72rem;text-align:center;padding:8px;
+    overflow:hidden;cursor:pointer;
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;}
+
+  /* lightbox */
+  .lightbox{
+    display:none;position:fixed;inset:0;background:rgba(20,12,6,.9);
+    z-index:100;align-items:center;justify-content:center;padding:24px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:90vw;max-height:85vh;border:4px solid var(--cream);border-radius:var(--radius);}
+  .lightbox-close{
+    position:absolute;top:20px;right:24px;color:var(--cream);
+    font-size:2rem;background:none;border:none;cursor:pointer;
+  }
+
+  /* CONTACT */
+  .contact{background:var(--espresso);color:var(--cream);}
+  .contact .section-tag{color:var(--gold-light);}
+  .contact h2{color:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contact-list{list-style:none;margin:0;padding:0;}
+  .contact-list li{
+    display:flex;gap:12px;padding:12px 0;
+    border-bottom:1px solid var(--espresso-soft);
+    font-size:.98rem;
+  }
+  .contact-list li b{color:var(--gold-light);min-width:110px;flex:none;}
+  .contact-cta{
+    background:var(--espresso-soft);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;gap:12px;
+    align-self:start;
+  }
+  .contact-cta h3{color:var(--cream);}
+  .contact-cta .btn{justify-content:center;}
+
+  /* FOOTER */
+  footer{
+    background:var(--espresso);color:#C9B99A;
+    border-top:1px solid var(--espresso-soft);
+    padding:22px 0;font-size:.82rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  /* floating whatsapp */
+  .float-whatsapp{
+    position:fixed;bottom:22px;right:22px;z-index:50;
+    background:#2E9E4F;color:#fff;
+    width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.35);
+    text-decoration:none;
+  }
+  .float-whatsapp svg{width:28px;height:28px;fill:#fff;}
+
+  @media (max-width:820px){
+    .hero .wrap,.about-grid,.products-grid,.contact-grid{grid-template-columns:1fr;}
+    .sizes-strip{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .hero{padding:44px 0 36px;}
+    .hero-photo{order:-1;}
+  }
+
+  :focus-visible{outline:3px solid var(--brick);outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      UMOJA-U1 BANDI
+      <span class="small">TANZANIA BREADCRUMBS CO.</span>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/255655993835?text=Habari%2C%20naomba%20maelezo%20kuhusu%20Tanzania%20Breadcrumbs" target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">
+        <span class="lang-sw">BIDHAA ASILI YA TANZANIA</span>
+        <span class="lang-en">MADE IN TANZANIA</span>
+      </div>
+      <h1>
+        <span class="lang-sw">Unga wa Mikate <em>unaogandisha</em> ladha</span>
+        <span class="lang-en">Breadcrumbs that <em>lock in</em> the flavour</span>
+      </h1>
+      <p class="lead">
+        <span class="lang-sw">Tanzania Breadcrumbs — nyeupe na kahawia — kwa ajili ya kukaanga kuku, samaki, nyama, kebab na nugget. Pia Jilambe Pilau Masala kwa mapishi yako ya kila siku.</span>
+        <span class="lang-en">Tanzania Breadcrumbs — white and brown — for frying chicken, fish, meat, kebabs and nuggets. Plus Jilambe Pilau Masala for your everyday cooking.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/255655993835?text=Habari%2C%20naomba%20maelezo%20kuhusu%20Tanzania%20Breadcrumbs" target="_blank" rel="noopener">
+          <span class="lang-sw">Tuma ujumbe WhatsApp</span>
+          <span class="lang-en">Message on WhatsApp</span>
+        </a>
+        <a class="btn btn-call" href="tel:+255655993835">
+          <span class="lang-sw">Piga simu</span>
+          <span class="lang-en">Call now</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Replace with: images/hero.jpg (e.g. the stacked jars & foil packets shot) -->
+      <img id="heroImg" src="images/hero-jars.jpg" alt="Tanzania Breadcrumbs jars and packets" onerror="this.parentElement.innerHTML='Picha ya bidhaa — weka picha kwenye folda ya images'">
+    </div>
+  </div>
+</section>
+<div class="perf on-dark"></div>
+
+<section>
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-tag">
+        <span class="lang-sw">KUHUSU SISI</span><span class="lang-en">ABOUT US</span>
+      </div>
+      <h2>
+        <span class="lang-sw">UMOJA-U1 BANDI COMPANY</span>
+        <span class="lang-en">UMOJA-U1 BANDI COMPANY</span>
+      </h2>
+      <p>
+        <span class="lang-sw">Sisi ni wazalishaji wa Tanzania Breadcrumbs, jijini Dar es Salaam. Bidhaa zetu hutumika kwenye mapishi mbalimbali ya nyumbani na biashara — ikiwemo harusi, vikao, mikutano na hoteli.</span>
+        <span class="lang-en">We produce Tanzania Breadcrumbs in Dar es Salaam. Our products are used in home and business cooking — including weddings, meetings, gatherings and hotels.</span>
+      </p>
+    </div>
+    <div>
+      <p>
+        <span class="lang-sw">Zinapatikana katika aina mbili — nyeupe na kahawia — na ujazo wa 250g, 400g na 1kg. Pia tunauza Jilambe Pilau Masala, kiungo cha 4 katika 1 (kitunguu saumu, mdalasini, hiliki, karafuu).</span>
+        <span class="lang-en">Available in two types — white and brown — in 250g, 400g and 1kg sizes. We also sell Jilambe Pilau Masala, a 4-in-1 spice blend (garlic, cinnamon, cardamom, cloves).</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="perf on-wheat"></div>
+<section class="section-wheat" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="lang-sw">BIDHAA ZETU</span><span class="lang-en">OUR PRODUCTS</span></div>
+      <h2><span class="lang-sw">Chagua kile unachohitaji</span><span class="lang-en">Choose what you need</span></h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-photo">
+          <!-- images/product-breadcrumbs.jpg -->
+          <img id="bcImg" src="images/breadcrumb-jars.jpg" alt="Tanzania Breadcrumbs white and brown jars" onerror="this.parentElement.innerHTML='Picha — weka picha kwenye folda ya images'">
+        </div>
+        <div class="product-body">
+          <h3><span class="lang-sw">Tanzania Breadcrumbs</span><span class="lang-en">Tanzania Breadcrumbs</span></h3>
+          <div class="tag-row">
+            <span class="tag lang-sw">Nyeupe</span><span class="tag lang-en">White</span>
+            <span class="tag lang-sw">Kahawia</span><span class="tag lang-en">Brown</span>
+            <span class="tag">250g / 400g / 1kg</span>
+          </div>
+          <p>
+            <span class="lang-sw">Unga wa mikate uliokaushwa vizuri kwa ajili ya kuvalisha kuku, samaki, nyama za kukaanga, kebab na chicken nuggets.</span>
+            <span class="lang-en">Well-dried bread crumbs for coating chicken, fish, fried meat, kebabs and chicken nuggets.</span>
+          </p>
+          <a class="btn btn-outline btn-sm" href="https://wa.me/255655993835?text=Naomba%20bei%20ya%20Tanzania%20Breadcrumbs" target="_blank" rel="noopener">
+            <span class="lang-sw">Uliza bei</span><span class="lang-en">Ask for price</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <!-- images/product-pilau.jpg -->
+          <img id="pilauImg" src="images/pilau-masala.jpg" alt="Jilambe Pilau Masala jars" onerror="this.parentElement.innerHTML='Picha — weka picha kwenye folda ya images'">
+        </div>
+        <div class="product-body">
+          <h3>Jilambe Pilau Masala</h3>
+          <div class="tag-row">
+            <span class="tag">4 in 1</span>
+            <span class="tag lang-sw">Kitunguu saumu · Mdalasini</span>
+            <span class="tag lang-en">Garlic · Cinnamon</span>
+          </div>
+          <p>
+            <span class="lang-sw">Mchanganyiko wa viungo 4 (kitunguu saumu, mdalasini, hiliki, karafuu) wenye harufu nzuri kwa ajili ya pilau, biryani na mchuzi.</span>
+            <span class="lang-en">A blend of 4 spices (garlic, cinnamon, cardamom, cloves) for pilau, biryani and stews.</span>
+          </p>
+          <a class="btn btn-outline btn-sm" href="https://wa.me/255655993835?text=Naomba%20bei%20ya%20Jilambe%20Pilau%20Masala" target="_blank" rel="noopener">
+            <span class="lang-sw">Uliza bei</span><span class="lang-en">Ask for price</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <!-- images/product-cleaner.jpg -->
+          <img id="cleanerImg" src="images/cleaner-tiles-sink.jpg" alt="HIGHEST Power Cleaner Tiles and Sink" onerror="this.parentElement.innerHTML='Picha — weka picha kwenye folda ya images'">
+        </div>
+        <div class="product-body">
+          <h3>HIGHEST Power Cleaner</h3>
+          <div class="tag-row">
+            <span class="tag lang-sw">Tiles &amp; Sink</span><span class="tag lang-en">Tiles &amp; Sink</span>
+            <span class="tag">1 Litre</span>
+            <span class="tag lang-sw">Ua vijidudu 99.99%</span><span class="tag lang-en">Kills 99.99% germs</span>
+          </div>
+          <p>
+            <span class="lang-sw">Dawa ya kusafishia yenye nguvu kwa ajili ya tiles, vyoo na sehemu chafu zenye uchafu sugu. Viungo: hydrochloric acid, maji na non-ionic surfactant.</span>
+            <span class="lang-en">A powerful disinfectant spray for tiles, toilets and stubborn dirt. Ingredients: hydrochloric acid, water and non-ionic surfactant.</span>
+          </p>
+          <a class="btn btn-outline btn-sm" href="https://wa.me/255655993835?text=Naomba%20bei%20ya%20HIGHEST%20Power%20Cleaner" target="_blank" rel="noopener">
+            <span class="lang-sw">Uliza bei</span><span class="lang-en">Ask for price</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf on-wheat"></div>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="lang-sw">UJAZO</span><span class="lang-en">SIZES</span></div>
+      <h2><span class="lang-sw">Ujazo uliopo</span><span class="lang-en">Available sizes</span></h2>
+    </div>
+    <div class="sizes-strip">
+      <div class="size-card">
+        <div class="num">250g</div>
+        <div class="lbl"><span class="lang-sw">Packet</span><span class="lang-en">Packet</span></div>
+        <div class="sub"><span class="lang-sw">Nyeupe na kahawia</span><span class="lang-en">White &amp; brown</span></div>
+      </div>
+      <div class="size-card">
+        <div class="num">400g</div>
+        <div class="lbl"><span class="lang-sw">Kopo</span><span class="lang-en">Jar</span></div>
+        <div class="sub"><span class="lang-sw">Katoni 1 ~ kopo 12</span><span class="lang-en">Carton of 12 jars</span></div>
+      </div>
+      <div class="size-card">
+        <div class="num">1kg</div>
+        <div class="lbl"><span class="lang-sw">Mfuko</span><span class="lang-en">Bag</span></div>
+        <div class="sub"><span class="lang-sw">Katoni 1 ~ mifuko 12</span><span class="lang-en">Carton of 12 bags</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf on-wheat"></div>
+<section class="section-wheat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="lang-sw">MATUMIZI</span><span class="lang-en">USES</span></div>
+      <h2><span class="lang-sw">Zinatumika wapi?</span><span class="lang-en">Where they're used</span></h2>
+    </div>
+    <div class="uses-list">
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Kuku wa kukaanga</span><span class="lang-en">Fried chicken</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Samaki</span><span class="lang-en">Fish</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Nyama za mchopsi</span><span class="lang-en">Meat chops</span></div>
+      <div class="use-item"><span class="dot"></span>Kebabs</div>
+      <div class="use-item"><span class="dot"></span>Chicken nuggets</div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Harusi</span><span class="lang-en">Weddings</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Vikao na mikutano</span><span class="lang-en">Meetings &amp; gatherings</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Hoteli na majumbani</span><span class="lang-en">Hotels &amp; home</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="perf on-wheat"></div>
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="lang-sw">PICHA ZA BIDHAA</span><span class="lang-en">GALLERY</span></div>
+      <h2><span class="lang-sw">Bidhaa zetu kwa picha</span><span class="lang-en">Our products in pictures</span></h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Add photos as images/gallery-1.jpg ... gallery-9.jpg -->
+    </div>
+  </div>
+</section>
+
+<div class="perf on-dark"></div>
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-tag"><span class="lang-sw">WASILIANA NASI</span><span class="lang-en">CONTACT US</span></div>
+      <h2><span class="lang-sw">Tuko tayari kukuhudumia</span><span class="lang-en">We're ready to help</span></h2>
+      <ul class="contact-list">
+        <li><b><span class="lang-sw">Simu</span><span class="lang-en">Phone</span></b> <span>+255 655 993 835 · +255 755 993 835 · +255 718 602 840</span></li>
+        <li><b>Email</b> <span>eliaumoja89@gmail.com</span></li>
+        <li><b><span class="lang-sw">Sanduku la Posta</span><span class="lang-en">P.O. Box</span></b> <span>P.O. Box 22, Dar es Salaam</span></li>
+        <li><b>Facebook</b> <span>UMOJA-U1 BANDI COMPANY</span></li>
+      </ul>
+    </div>
+    <div class="contact-cta">
+      <h3><span class="lang-sw">Una swali?</span><span class="lang-en">Have a question?</span></h3>
+      <p style="color:#D9C9AE;">
+        <span class="lang-sw">Tutumie ujumbe WhatsApp na tutakujibu haraka.</span>
+        <span class="lang-en">Send us a WhatsApp message and we'll reply quickly.</span>
+      </p>
+      <a class="btn btn-whatsapp" href="https://wa.me/255655993835?text=Habari%2C%20nina%20swali%20kuhusu%20bidhaa%20zenu" target="_blank" rel="noopener">
+        <span class="lang-sw">Tuma swali WhatsApp</span><span class="lang-en">Ask on WhatsApp</span>
+      </a>
+      <a class="btn btn-call" href="tel:+255655993835">
+        <span class="lang-sw">Piga simu sasa</span><span class="lang-en">Call now</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="width:100%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <span>© 2026 UMOJA-U1 BANDI COMPANY</span>
+    <span><span class="lang-sw">Dar es Salaam, Tanzania</span><span class="lang-en">Dar es Salaam, Tanzania</span></span>
+  </div>
+</footer>
+
+<a class="float-whatsapp" href="https://wa.me/255655993835?text=Habari%2C%20naomba%20maelezo%20kuhusu%20Tanzania%20Breadcrumbs" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.1 3C9 3 3.2 8.8 3.2 15.9c0 2.4.7 4.7 1.9 6.7L3 29l6.6-2c1.9 1 4.1 1.6 6.4 1.6 7.1 0 12.9-5.8 12.9-12.9C29 8.8 23.2 3 16.1 3zm0 23.5c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.9 1.2 1.2-3.8-.3-.4c-1.1-1.8-1.7-3.8-1.7-5.9 0-6.1 5-11.1 11.1-11.1S27.2 9.7 27.2 15.8 22.2 26.5 16.1 26.5zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ============================================================
+// KUSOMA PICHA MOJA KWA MOJA (bila kuhariri code kila mara)
+// Badilisha GITHUB_USER / GITHUB_REPO / GITHUB_BRANCH hapa chini
+// KWA MARA MOJA TU ili vilingane na repo yako ya GitHub Pages.
+// Baada ya hapo: weka picha yoyote kwenye folda ya "images" —
+// tovuti itazisoma yenyewe kila inapofunguliwa, bila kuhariri code.
+//
+// Jinsi inavyopanga picha:
+//  - jina lenye neno "hero"      -> picha kuu (hero)
+//  - jina lenye neno "breadcrumb"-> picha ya Tanzania Breadcrumbs
+//  - jina lenye neno "pilau"     -> picha ya Jilambe Pilau Masala
+//  - jina lenye neno "clean"     -> picha ya HIGHEST Power Cleaner
+//  - picha nyingine zote (jina lolote) -> zinaingia moja kwa moja
+//    kwenye sehemu ya "Gallery"
+// ============================================================
+const GITHUB_USER   = 'umojau1bandi';
+const GITHUB_REPO   = 'umojau1bandi.github.io';
+const GITHUB_BRANCH = 'main';
+const IMAGES_PATH   = 'images';
+
+const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${IMAGES_PATH}/`;
+const API_URL  = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${IMAGES_PATH}?ref=${GITHUB_BRANCH}`;
+
+function toggleLang(){
+  document.body.classList.toggle('show-en');
+  document.getElementById('langToggle').textContent = document.body.classList.contains('show-en') ? 'SW' : 'EN';
+  document.documentElement.lang = document.body.classList.contains('show-en') ? 'en' : 'sw';
+}
+
+function renderGallery(srcList){
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = '';
+  srcList.forEach(function(src){
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Tanzania Breadcrumbs';
+    img.onerror = function(){ div.style.display = 'none'; };
+    div.appendChild(img);
+    div.onclick = function(){ openLightbox(src); };
+    grid.appendChild(div);
+  });
+}
+
+// Nakala ya akiba (offline / kabla ya kupakia GitHub) — picha za ndani
+// zenye majina ya kawaida, ikiwa mtandao wa GitHub API haupatikani.
+function loadFallbackGallery(){
+  const galleryFiles = ['gallery-1.jpg','gallery-2.jpg','gallery-3.jpg','gallery-4.jpg','gallery-5.jpg','gallery-6.jpg','gallery-7.jpg','gallery-8.jpg'];
+  renderGallery(galleryFiles.map(f => 'images/' + f));
+}
+
+async function autoLoadImages(){
+  try{
+    const res = await fetch(API_URL);
+    if(!res.ok) throw new Error('github api not available yet');
+    const files = await res.json();
+    if(!Array.isArray(files)) throw new Error('unexpected response');
+    const imgs = files.filter(f => f.type === 'file' && /\.(jpe?g|png|webp)$/i.test(f.name));
+    if(imgs.length === 0) throw new Error('no images yet');
+
+    const used = new Set();
+    function pick(keyword){
+      const match = imgs.find(f => !used.has(f.name) && f.name.toLowerCase().includes(keyword));
+      if(match){ used.add(match.name); return RAW_BASE + match.name; }
+      return null;
+    }
+    const heroSrc     = pick('hero');
+    const bcSrc        = pick('breadcrumb');
+    const pilauSrc      = pick('pilau');
+    const cleanerSrc     = pick('clean');
+
+    if(heroSrc)    document.getElementById('heroImg').src = heroSrc;
+    if(bcSrc)      document.getElementById('bcImg').src = bcSrc;
+    if(pilauSrc)   document.getElementById('pilauImg').src = pilauSrc;
+    if(cleanerSrc) document.getElementById('cleanerImg').src = cleanerSrc;
+
+    // Picha zote zisizotumika juu -> Gallery moja kwa moja
+    const galleryList = imgs.filter(f => !used.has(f.name)).map(f => RAW_BASE + f.name);
+    if(galleryList.length > 0){
+      renderGallery(galleryList);
+    } else {
+      document.getElementById('galleryGrid').innerHTML = '';
+    }
+  }catch(e){
+    loadFallbackGallery();
+  }
+}
+
+autoLoadImages();
+
+function openLightbox(src){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(e){
+  if(e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+}
+</script>
+
+</body>
+</html>
