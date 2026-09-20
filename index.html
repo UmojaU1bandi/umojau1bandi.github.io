@@ -256,6 +256,72 @@
   }
   .float-whatsapp svg{width:28px;height:28px;fill:#fff;}
 
+  /* FAQ CHATBOT */
+  .faq-float{
+    position:fixed;bottom:22px;left:22px;z-index:50;
+    background:var(--brick);color:#fff;
+    width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.35);
+    border:none;cursor:pointer;
+  }
+  .faq-float svg{width:26px;height:26px;fill:#fff;}
+  .faq-badge{
+    position:absolute;top:-4px;right:-4px;
+    background:var(--gold-light);color:var(--espresso);
+    font-size:.65rem;font-weight:800;
+    width:18px;height:18px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .faq-panel{
+    position:fixed;bottom:90px;left:22px;z-index:60;
+    width:min(340px,calc(100vw - 44px));
+    max-height:min(520px,70vh);
+    background:var(--cream);
+    border:2px solid var(--espresso);
+    border-radius:8px;
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  .faq-panel.open{display:flex;}
+  .faq-head{
+    background:var(--espresso);color:var(--cream);
+    padding:14px 16px;display:flex;justify-content:space-between;align-items:center;
+    font-family:'Bitter';font-weight:700;font-size:.95rem;
+  }
+  .faq-head button{background:none;border:none;color:var(--cream);font-size:1.3rem;cursor:pointer;line-height:1;}
+  .faq-body{
+    flex:1;overflow-y:auto;padding:14px;
+    display:flex;flex-direction:column;gap:10px;
+    background:var(--white);
+  }
+  .faq-msg{
+    max-width:85%;padding:9px 12px;border-radius:10px;
+    font-size:.87rem;line-height:1.45;
+  }
+  .faq-msg.bot{background:var(--wheat);align-self:flex-start;border-bottom-left-radius:2px;}
+  .faq-msg.user{background:var(--brick);color:#fff;align-self:flex-end;border-bottom-right-radius:2px;}
+  .faq-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px;background:var(--white);}
+  .faq-chip{
+    background:var(--cream);border:1.5px solid var(--espresso);
+    border-radius:20px;padding:6px 11px;font-size:.76rem;font-weight:700;
+    cursor:pointer;
+  }
+  .faq-inputrow{
+    display:flex;gap:8px;padding:10px;border-top:2px solid var(--espresso);
+    background:var(--cream);
+  }
+  .faq-inputrow input{
+    flex:1;border:1.5px solid var(--espresso);border-radius:6px;
+    padding:9px 10px;font-family:'Mulish';font-size:.87rem;background:var(--white);color:var(--espresso);
+  }
+  .faq-inputrow button{
+    background:var(--brick);color:#fff;border:none;border-radius:6px;
+    padding:0 14px;font-weight:700;cursor:pointer;
+  }
+
   @media (max-width:820px){
     .hero .wrap,.about-grid,.products-grid,.contact-grid{grid-template-columns:1fr;}
     .sizes-strip{grid-template-columns:1fr;}
@@ -520,6 +586,24 @@
   <svg viewBox="0 0 32 32"><path d="M16.1 3C9 3 3.2 8.8 3.2 15.9c0 2.4.7 4.7 1.9 6.7L3 29l6.6-2c1.9 1 4.1 1.6 6.4 1.6 7.1 0 12.9-5.8 12.9-12.9C29 8.8 23.2 3 16.1 3zm0 23.5c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.9 1.2 1.2-3.8-.3-.4c-1.1-1.8-1.7-3.8-1.7-5.9 0-6.1 5-11.1 11.1-11.1S27.2 9.7 27.2 15.8 22.2 26.5 16.1 26.5zm6.1-8.3c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/></svg>
 </a>
 
+<button class="faq-float" id="faqOpenBtn" aria-label="FAQ Chat" onclick="toggleFAQ(true)">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.6 1.32 4.93 3.4 6.53-.15 1.2-.6 2.53-1.4 3.67 1.53-.2 3.13-.87 4.33-1.8 1.13.4 2.36.6 3.67.6 5.52 0 10-3.94 10-8.8S17.52 2 12 2z"/></svg>
+  <span class="faq-badge">?</span>
+</button>
+
+<div class="faq-panel" id="faqPanel">
+  <div class="faq-head">
+    <span><span class="lang-sw">Una swali? Uliza hapa</span><span class="lang-en">Have a question? Ask here</span></span>
+    <button onclick="toggleFAQ(false)" aria-label="Close">&times;</button>
+  </div>
+  <div class="faq-body" id="faqBody"></div>
+  <div class="faq-chips" id="faqChips"></div>
+  <div class="faq-inputrow">
+    <input id="faqInput" type="text" placeholder="Andika swali lako..." onkeydown="if(event.key==='Enter')askFAQ()">
+    <button onclick="askFAQ()"><span class="lang-sw">Tuma</span><span class="lang-en">Send</span></button>
+  </div>
+</div>
+
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <button class="lightbox-close" aria-label="Close">&times;</button>
   <img id="lightboxImg" src="" alt="">
@@ -553,6 +637,7 @@ function toggleLang(){
   document.body.classList.toggle('show-en');
   document.getElementById('langToggle').textContent = document.body.classList.contains('show-en') ? 'SW' : 'EN';
   document.documentElement.lang = document.body.classList.contains('show-en') ? 'en' : 'sw';
+  if(document.getElementById('faqPanel').dataset.started){ renderFAQChips(); }
 }
 
 function renderGallery(srcList){
@@ -616,6 +701,115 @@ async function autoLoadImages(){
 }
 
 autoLoadImages();
+
+// ============================================================
+// FAQ CHATBOT — maswali ya kawaida na majibu ya papo hapo
+// (Bila mtandao wa AI — majibu yameandaliwa kabla, hupatikana
+// hata mteja aulize wakati wowote, bila kusubiri mtu kujibu.)
+// Ongeza/badilisha maswali kwenye orodha ya faqData hapa chini.
+// ============================================================
+const faqData = [
+  {
+    q_sw:"Bei ni ngapi?", q_en:"What is the price?",
+    keywords:["bei","price","gharama","cost","ngapi"],
+    a_sw:"Bei hutegemea aina (nyeupe/kahawia) na ujazo (250g, 400g, 1kg). Tuma ujumbe WhatsApp kwa bei ya sasa na punguzo la jumla.",
+    a_en:"Price depends on the type (white/brown) and size (250g, 400g, 1kg). Message us on WhatsApp for current pricing and wholesale discounts."
+  },
+  {
+    q_sw:"Ujazo upi mnao?", q_en:"What sizes do you have?",
+    keywords:["ujazo","size","kilo","gramu","250g","400g","1kg","sizes"],
+    a_sw:"Tunazo packet za 250g, kopo za 400g (katoni ya kopo 12), na mifuko ya 1kg (katoni ya mifuko 12) — kila moja nyeupe na kahawia.",
+    a_en:"We have 250g packets, 400g jars (12 per carton), and 1kg bags (12 per carton) — each in white and brown."
+  },
+  {
+    q_sw:"Mko wapi / mnapeleka wapi?", q_en:"Where are you / do you deliver?",
+    keywords:["wapi","mahali","location","dar","posta","box","deliver","usafirishaji","peleka"],
+    a_sw:"Tupo Dar es Salaam (P.O. Box 22). Tunaweza kupanga usafirishaji kulingana na eneo lako — uliza WhatsApp kwa maelezo.",
+    a_en:"We're based in Dar es Salaam (P.O. Box 22). Delivery can be arranged depending on your location — ask us on WhatsApp for details."
+  },
+  {
+    q_sw:"Zinatumika kwa nini?", q_en:"What are they used for?",
+    keywords:["tumika","matumizi","use","kuku","samaki","nyama","kebab","nugget"],
+    a_sw:"Breadcrumbs zetu hutumika kuvalisha kuku, samaki, nyama za kukaanga, kebab na chicken nuggets. Pia hutumika kwenye harusi, mikutano na hoteli.",
+    a_en:"Our breadcrumbs are used for coating chicken, fish, fried meat, kebabs and chicken nuggets — also used for weddings, meetings and hotels."
+  },
+  {
+    q_sw:"Mnauza cleaner pia?", q_en:"Do you also sell cleaner?",
+    keywords:["cleaner","highest","tiles","sink","safi","dawa ya kusafisha"],
+    a_sw:"Ndiyo — HIGHEST Power Cleaner (Tiles & Sink), lita 1, huua vijidudu 99.99%. Angalia sehemu ya bidhaa hapo juu.",
+    a_en:"Yes — HIGHEST Power Cleaner (Tiles & Sink), 1 litre, kills 99.99% of germs. See the products section above."
+  },
+  {
+    q_sw:"Nifanyeje order?", q_en:"How do I order?",
+    keywords:["order","nunua","buy","how to order","agiza"],
+    a_sw:"Bonyeza kitufe cha WhatsApp au piga simu +255 655 993 835 — tutakusaidia na order, bei na malipo.",
+    a_en:"Tap the WhatsApp button or call +255 655 993 835 — we'll help you with your order, pricing and payment."
+  }
+];
+
+function toggleFAQ(open){
+  const panel = document.getElementById('faqPanel');
+  if(open){
+    panel.classList.add('open');
+    if(!panel.dataset.started){
+      panel.dataset.started = '1';
+      addFAQMessage('bot',
+        document.body.classList.contains('show-en')
+          ? "Habari! Ask me about price, sizes, delivery, or products."
+          : "Habari! Niulize kuhusu bei, ujazo, usafirishaji, au bidhaa."
+      );
+      renderFAQChips();
+    }
+  } else {
+    panel.classList.remove('open');
+  }
+}
+
+function addFAQMessage(who, text){
+  const body = document.getElementById('faqBody');
+  const div = document.createElement('div');
+  div.className = 'faq-msg ' + who;
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function renderFAQChips(){
+  const chips = document.getElementById('faqChips');
+  chips.innerHTML = '';
+  const isEn = document.body.classList.contains('show-en');
+  faqData.forEach(function(item){
+    const chip = document.createElement('button');
+    chip.className = 'faq-chip';
+    chip.textContent = isEn ? item.q_en : item.q_sw;
+    chip.onclick = function(){
+      addFAQMessage('user', isEn ? item.q_en : item.q_sw);
+      addFAQMessage('bot', isEn ? item.a_en : item.a_sw);
+    };
+    chips.appendChild(chip);
+  });
+}
+
+function askFAQ(){
+  const input = document.getElementById('faqInput');
+  const text = input.value.trim();
+  if(!text) return;
+  const isEn = document.body.classList.contains('show-en');
+  addFAQMessage('user', text);
+  input.value = '';
+
+  const lower = text.toLowerCase();
+  const match = faqData.find(item => item.keywords.some(k => lower.includes(k)));
+  if(match){
+    addFAQMessage('bot', isEn ? match.a_en : match.a_sw);
+  } else {
+    addFAQMessage('bot',
+      isEn
+        ? "I'm not sure about that one — please message us directly on WhatsApp and we'll help you right away."
+        : "Sina uhakika na hilo — tafadhali tutumie ujumbe WhatsApp na tutakusaidia papo hapo."
+    );
+  }
+}
 
 function openLightbox(src){
   document.getElementById('lightboxImg').src = src;
