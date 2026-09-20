@@ -313,7 +313,7 @@
     </div>
     <div class="hero-photo">
       <!-- Replace with: images/hero.jpg (e.g. the stacked jars & foil packets shot) -->
-      <img id="heroImg" src="images/hero-jars.jpg" alt="Tanzania Breadcrumbs jars and packets" onerror="this.parentElement.innerHTML='Picha ya bidhaa — weka picha kwenye folda ya images'">
+      <img id="heroImg" src="hero-jars.jpg" alt="Tanzania Breadcrumbs jars and packets" onerror="this.parentElement.innerHTML='Picha ya bidhaa — inapakia...'">
     </div>
   </div>
 </section>
@@ -354,7 +354,7 @@
       <div class="product-card">
         <div class="product-photo">
           <!-- images/product-breadcrumbs.jpg -->
-          <img id="bcImg" src="images/breadcrumb-jars.jpg" alt="Tanzania Breadcrumbs white and brown jars" onerror="this.parentElement.innerHTML='Picha — weka picha kwenye folda ya images'">
+          <img id="bcImg" src="breadcrumb-jars.jpg" alt="Tanzania Breadcrumbs white and brown jars" onerror="this.parentElement.innerHTML='Picha — inapakia...'">
         </div>
         <div class="product-body">
           <h3><span class="lang-sw">Tanzania Breadcrumbs</span><span class="lang-en">Tanzania Breadcrumbs</span></h3>
@@ -376,7 +376,7 @@
       <div class="product-card">
         <div class="product-photo">
           <!-- images/product-pilau.jpg -->
-          <img id="pilauImg" src="images/pilau-masala.jpg" alt="Jilambe Pilau Masala jars" onerror="this.parentElement.innerHTML='Picha — weka picha kwenye folda ya images'">
+          <img id="pilauImg" src="pilau-masala.jpg" alt="Jilambe Pilau Masala jars" onerror="this.parentElement.innerHTML='Picha — inapakia...'">
         </div>
         <div class="product-body">
           <h3>Jilambe Pilau Masala</h3>
@@ -398,7 +398,7 @@
       <div class="product-card">
         <div class="product-photo">
           <!-- images/product-cleaner.jpg -->
-          <img id="cleanerImg" src="images/cleaner-tiles-sink.jpg" alt="HIGHEST Power Cleaner Tiles and Sink" onerror="this.parentElement.innerHTML='Picha — weka picha kwenye folda ya images'">
+          <img id="cleanerImg" src="cleaner-tiles-sink.jpg" alt="HIGHEST Power Cleaner Tiles and Sink" onerror="this.parentElement.innerHTML='Picha — inapakia...'">
         </div>
         <div class="product-body">
           <h3>HIGHEST Power Cleaner</h3>
@@ -544,9 +544,9 @@
 const GITHUB_USER   = 'umojau1bandi';
 const GITHUB_REPO   = 'umojau1bandi.github.io';
 const GITHUB_BRANCH = 'main';
-const IMAGES_PATH   = 'images';
+const IMAGES_PATH   = ''; // faili za picha zipo kwenye mzizi (root) wa repo, siyo kwenye folda ya "images"
 
-const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${IMAGES_PATH}/`;
+const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${IMAGES_PATH}`;
 const API_URL  = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${IMAGES_PATH}?ref=${GITHUB_BRANCH}`;
 
 function toggleLang(){
@@ -575,7 +575,7 @@ function renderGallery(srcList){
 // zenye majina ya kawaida, ikiwa mtandao wa GitHub API haupatikani.
 function loadFallbackGallery(){
   const galleryFiles = ['gallery-1.jpg','gallery-2.jpg','gallery-3.jpg','gallery-4.jpg','gallery-5.jpg','gallery-6.jpg','gallery-7.jpg','gallery-8.jpg'];
-  renderGallery(galleryFiles.map(f => 'images/' + f));
+  renderGallery(galleryFiles.map(f => f));
 }
 
 async function autoLoadImages(){
