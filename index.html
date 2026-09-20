@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tanzania Breadcrumbs — UMOJA-U1 BANDI COMPANY</title>
-<meta name="description" content="Tanzania Breadcrumbs (nyeupe na kahawia) na Jilambe Pilau Masala kutoka UMOJA-U1 BANDI COMPANY, Dar es Salaam.">
+<title>Tanzania Breadcrumbs — UMOJA-U1 BANDI COMPANY LTD</title>
+<meta name="description" content="Tanzania Breadcrumbs (White na Brown) na Jilambe Pilau Masala kutoka UMOJA-U1 BANDI COMPANY LTD, Dar es Salaam.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;900&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -71,8 +71,9 @@
   .brand{
     font-family:'Bitter',serif;font-weight:900;
     font-size:1.25rem;letter-spacing:.02em;
-    display:flex;flex-direction:column;line-height:1.05;
+    display:flex;align-items:center;line-height:1.05;
   }
+  .brand img{height:44px;width:auto;display:block;}
   .brand span.small{font-family:'Mulish',sans-serif;font-weight:700;font-size:.62rem;color:var(--brick);letter-spacing:.14em;}
   .nav-actions{display:flex;align-items:center;gap:10px;}
   .lang-btn{
@@ -191,6 +192,22 @@
     display:flex;align-items:center;gap:10px;
   }
   .use-item .dot{width:8px;height:8px;background:var(--brick);border-radius:50%;flex:none;}
+
+  /* STEPS (jinsi ya kutumia) */
+  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .step-card{
+    background:var(--white);border:2px solid var(--espresso);
+    border-radius:var(--radius);padding:24px 20px;position:relative;
+  }
+  .step-num{
+    width:36px;height:36px;border-radius:50%;
+    background:var(--brick);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Bitter';font-weight:900;font-size:1.05rem;
+    margin-bottom:14px;
+  }
+  .step-card p{font-size:.92rem;margin:0;}
+  @media (max-width:820px){ .steps-grid{grid-template-columns:1fr;} }
 
   /* GALLERY */
   .gallery-grid{
@@ -339,8 +356,11 @@
 <header>
   <nav class="wrap">
     <div class="brand">
-      UMOJA-U1 BANDI
-      <span class="small">TANZANIA BREADCRUMBS CO.</span>
+      <img id="logoImg" src="logo.jpg" alt="UMOJA-U1 BANDI COMPANY LTD" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <div class="brand-text" style="display:none;flex-direction:column;line-height:1.05;">
+        UMOJA-U1 BANDI
+        <span class="small">TANZANIA BREADCRUMBS CO.</span>
+      </div>
     </div>
     <div class="nav-actions">
       <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
@@ -363,8 +383,12 @@
         <span class="lang-en">Breadcrumbs that <em>lock in</em> the flavour</span>
       </h1>
       <p class="lead">
-        <span class="lang-sw">Tanzania Breadcrumbs — nyeupe na kahawia — kwa ajili ya kukaanga kuku, samaki, nyama, kebab na nugget. Pia Jilambe Pilau Masala kwa mapishi yako ya kila siku.</span>
+        <span class="lang-sw">Tanzania Breadcrumbs — White na Brown — kwa ajili ya kukaanga kuku, samaki, nyama, kebab na nugget. Pia Jilambe Pilau Masala kwa mapishi yako ya kila siku.</span>
         <span class="lang-en">Tanzania Breadcrumbs — white and brown — for frying chicken, fish, meat, kebabs and nuggets. Plus Jilambe Pilau Masala for your everyday cooking.</span>
+      </p>
+      <p style="color:var(--gold-light);font-weight:800;font-size:1.02rem;margin-top:-4px;">
+        <span class="lang-sw">"Ongeza Radhi na Ukoko Kwenye Kila Pishi!"</span>
+        <span class="lang-en">"Add Flavour and Crunch to Every Dish!"</span>
       </p>
       <div class="hero-actions">
         <a class="btn btn-whatsapp" href="https://wa.me/255655993835?text=Habari%2C%20naomba%20maelezo%20kuhusu%20Tanzania%20Breadcrumbs" target="_blank" rel="noopener">
@@ -392,17 +416,21 @@
         <span class="lang-sw">KUHUSU SISI</span><span class="lang-en">ABOUT US</span>
       </div>
       <h2>
-        <span class="lang-sw">UMOJA-U1 BANDI COMPANY</span>
-        <span class="lang-en">UMOJA-U1 BANDI COMPANY</span>
+        <span class="lang-sw">UMOJA-U1 BANDI COMPANY LTD</span>
+        <span class="lang-en">UMOJA-U1 BANDI COMPANY LTD</span>
       </h2>
       <p>
         <span class="lang-sw">Sisi ni wazalishaji wa Tanzania Breadcrumbs, jijini Dar es Salaam. Bidhaa zetu hutumika kwenye mapishi mbalimbali ya nyumbani na biashara — ikiwemo harusi, vikao, mikutano na hoteli.</span>
         <span class="lang-en">We produce Tanzania Breadcrumbs in Dar es Salaam. Our products are used in home and business cooking — including weddings, meetings, gatherings and hotels.</span>
       </p>
+      <p>
+        <span class="lang-sw">Ni chembechembe za mkate halisi uliookwa na kukaushwa kwa joto la juu ili kupata ukavu na wepesi wa kipekee — 100% asilia, hazina rangi za bandia wala vihifadhi vya kemikali.</span>
+        <span class="lang-en">Made from real baked bread, dried at high heat for a light, crisp texture — 100% natural, with no artificial colors or chemical preservatives.</span>
+      </p>
     </div>
     <div>
       <p>
-        <span class="lang-sw">Zinapatikana katika aina mbili — nyeupe na kahawia — na ujazo wa 250g, 400g na 1kg. Pia tunauza Jilambe Pilau Masala, kiungo cha 4 katika 1 (kitunguu saumu, mdalasini, hiliki, karafuu).</span>
+        <span class="lang-sw">Zinapatikana katika aina mbili — White na Brown — na ujazo wa 250g, 400g na 1kg. Pia tunauza Jilambe Pilau Masala, kiungo cha 4 katika 1 (kitunguu saumu, mdalasini, hiliki, karafuu).</span>
         <span class="lang-en">Available in two types — white and brown — in 250g, 400g and 1kg sizes. We also sell Jilambe Pilau Masala, a 4-in-1 spice blend (garlic, cinnamon, cardamom, cloves).</span>
       </p>
     </div>
@@ -425,8 +453,8 @@
         <div class="product-body">
           <h3><span class="lang-sw">Tanzania Breadcrumbs</span><span class="lang-en">Tanzania Breadcrumbs</span></h3>
           <div class="tag-row">
-            <span class="tag lang-sw">Nyeupe</span><span class="tag lang-en">White</span>
-            <span class="tag lang-sw">Kahawia</span><span class="tag lang-en">Brown</span>
+            <span class="tag">White</span>
+            <span class="tag">Brown</span>
             <span class="tag">250g / 400g / 1kg</span>
           </div>
           <p>
@@ -497,7 +525,7 @@
       <div class="size-card">
         <div class="num">250g</div>
         <div class="lbl"><span class="lang-sw">Packet</span><span class="lang-en">Packet</span></div>
-        <div class="sub"><span class="lang-sw">Nyeupe na kahawia</span><span class="lang-en">White &amp; brown</span></div>
+        <div class="sub"><span>White &amp; Brown</span></div>
       </div>
       <div class="size-card">
         <div class="num">400g</div>
@@ -508,6 +536,46 @@
         <div class="num">1kg</div>
         <div class="lbl"><span class="lang-sw">Mfuko</span><span class="lang-en">Bag</span></div>
         <div class="sub"><span class="lang-sw">Katoni 1 ~ mifuko 12</span><span class="lang-en">Carton of 12 bags</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="perf on-wheat"></div>
+<section class="section-wheat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="lang-sw">FAIDA ZAKE</span><span class="lang-en">BENEFITS</span></div>
+      <h2><span class="lang-sw">Kwa nini uchague Tanzania Breadcrumbs</span><span class="lang-en">Why choose Tanzania Breadcrumbs</span></h2>
+    </div>
+    <div class="uses-list">
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Hufyonza mafuta kidogo</span><span class="lang-en">Absorbs less oil</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Ukoko wa kudumu (extra crispy)</span><span class="lang-en">Extra crispy, long-lasting crunch</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Rangi nzuri ya dhahabu</span><span class="lang-en">Beautiful golden color</span></div>
+      <div class="use-item"><span class="dot"></span><span class="lang-sw">Salama kwa afya — 100% asilia</span><span class="lang-en">Safe & natural — 100% pure</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="perf on-wheat"></div>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="lang-sw">JINSI YA KUTUMIA</span><span class="lang-en">HOW TO USE</span></div>
+      <h2><span class="lang-sw">Hatua 3 rahisi</span><span class="lang-en">3 simple steps</span></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <p><span class="lang-sw">Paka bidhaa yako (kuku/samaki) kwenye unga wa ngano au yai lililopigwa.</span><span class="lang-en">Coat your chicken or fish in flour or beaten egg.</span></p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <p><span class="lang-sw">Izungushe kwenye Tanzania Breadcrumbs mpaka ifunikwe vizuri.</span><span class="lang-en">Roll it in Tanzania Breadcrumbs until fully coated.</span></p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <p><span class="lang-sw">Kaanga, oka, au tumia air-fryer mpaka iwe na rangi nzuri ya dhahabu!</span><span class="lang-en">Fry, bake, or air-fry until golden brown!</span></p>
       </div>
     </div>
   </div>
@@ -555,8 +623,9 @@
       <ul class="contact-list">
         <li><b><span class="lang-sw">Simu</span><span class="lang-en">Phone</span></b> <span>+255 655 993 835 · +255 755 993 835 · +255 718 602 840</span></li>
         <li><b>Email</b> <span>eliaumoja89@gmail.com</span></li>
+        <li><b><span class="lang-sw">Mahali</span><span class="lang-en">Location</span></b> <span>Gongolamboto, Dar es Salaam, Tanzania</span></li>
         <li><b><span class="lang-sw">Sanduku la Posta</span><span class="lang-en">P.O. Box</span></b> <span>P.O. Box 22, Dar es Salaam</span></li>
-        <li><b>Facebook</b> <span>UMOJA-U1 BANDI COMPANY</span></li>
+        <li><b>Facebook</b> <span>UMOJA-U1 BANDI COMPANY LTD</span></li>
       </ul>
     </div>
     <div class="contact-cta">
@@ -577,7 +646,7 @@
 
 <footer>
   <div class="wrap" style="width:100%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-    <span>© 2026 UMOJA-U1 BANDI COMPANY</span>
+    <span>© 2026 UMOJA-U1 BANDI COMPANY LTD</span>
     <span><span class="lang-sw">Dar es Salaam, Tanzania</span><span class="lang-en">Dar es Salaam, Tanzania</span></span>
   </div>
 </footer>
@@ -669,7 +738,7 @@ async function autoLoadImages(){
     if(!res.ok) throw new Error('github api not available yet');
     const files = await res.json();
     if(!Array.isArray(files)) throw new Error('unexpected response');
-    const imgs = files.filter(f => f.type === 'file' && /\.(jpe?g|png|webp)$/i.test(f.name));
+    const imgs = files.filter(f => f.type === 'file' && /\.(jpe?g|png|webp)$/i.test(f.name) && !f.name.toLowerCase().includes('logo'));
     if(imgs.length === 0) throw new Error('no images yet');
 
     const used = new Set();
@@ -712,20 +781,20 @@ const faqData = [
   {
     q_sw:"Bei ni ngapi?", q_en:"What is the price?",
     keywords:["bei","price","gharama","cost","ngapi"],
-    a_sw:"Bei hutegemea aina (nyeupe/kahawia) na ujazo (250g, 400g, 1kg). Tuma ujumbe WhatsApp kwa bei ya sasa na punguzo la jumla.",
+    a_sw:"Bei hutegemea aina (White/Brown) na ujazo (250g, 400g, 1kg). Tuma ujumbe WhatsApp kwa bei ya sasa na punguzo la jumla.",
     a_en:"Price depends on the type (white/brown) and size (250g, 400g, 1kg). Message us on WhatsApp for current pricing and wholesale discounts."
   },
   {
     q_sw:"Ujazo upi mnao?", q_en:"What sizes do you have?",
     keywords:["ujazo","size","kilo","gramu","250g","400g","1kg","sizes"],
-    a_sw:"Tunazo packet za 250g, kopo za 400g (katoni ya kopo 12), na mifuko ya 1kg (katoni ya mifuko 12) — kila moja nyeupe na kahawia.",
+    a_sw:"Tunazo packet za 250g, kopo za 400g (katoni ya kopo 12), na mifuko ya 1kg (katoni ya mifuko 12) — kila moja White na Brown.",
     a_en:"We have 250g packets, 400g jars (12 per carton), and 1kg bags (12 per carton) — each in white and brown."
   },
   {
     q_sw:"Mko wapi / mnapeleka wapi?", q_en:"Where are you / do you deliver?",
     keywords:["wapi","mahali","location","dar","posta","box","deliver","usafirishaji","peleka"],
-    a_sw:"Tupo Dar es Salaam (P.O. Box 22). Tunaweza kupanga usafirishaji kulingana na eneo lako — uliza WhatsApp kwa maelezo.",
-    a_en:"We're based in Dar es Salaam (P.O. Box 22). Delivery can be arranged depending on your location — ask us on WhatsApp for details."
+    a_sw:"Tupo Gongolamboto, Dar es Salaam (P.O. Box 22). Tunaweza kupanga usafirishaji kulingana na eneo lako — uliza WhatsApp kwa maelezo.",
+    a_en:"We're based in Gongolamboto, Dar es Salaam (P.O. Box 22). Delivery can be arranged depending on your location — ask us on WhatsApp for details."
   },
   {
     q_sw:"Zinatumika kwa nini?", q_en:"What are they used for?",
@@ -738,6 +807,12 @@ const faqData = [
     keywords:["cleaner","highest","tiles","sink","safi","dawa ya kusafisha"],
     a_sw:"Ndiyo — HIGHEST Power Cleaner (Tiles & Sink), lita 1, huua vijidudu 99.99%. Angalia sehemu ya bidhaa hapo juu.",
     a_en:"Yes — HIGHEST Power Cleaner (Tiles & Sink), 1 litre, kills 99.99% of germs. See the products section above."
+  },
+  {
+    q_sw:"Nazitumiaje?", q_en:"How do I use them?",
+    keywords:["jinsi","hatua","namna","how to use","tumiaje"],
+    a_sw:"Hatua 3: (1) Paka kuku/samaki kwenye unga au yai. (2) Izungushe kwenye Breadcrumbs mpaka ifunikwe vizuri. (3) Kaanga, oka au tumia air-fryer mpaka iwe na rangi ya dhahabu.",
+    a_en:"3 steps: (1) Coat chicken/fish in flour or egg. (2) Roll in Breadcrumbs until fully covered. (3) Fry, bake or air-fry until golden."
   },
   {
     q_sw:"Nifanyeje order?", q_en:"How do I order?",
